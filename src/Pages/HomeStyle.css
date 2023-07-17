@@ -1,0 +1,16 @@
+.HomeDiv{
+    text-align: left;
+    font-size: medium;
+    margin: 0 auto 0 auto;
+    display: flex;
+    align-items: center;
+    width: 800px;
+}
+.HomeDiv .HomeHeading{
+    margin: 1em 0 0 0;
+}
+@media (max-width: 800px) {
+    .HomeDiv{
+        width: 75vw;
+    }
+}

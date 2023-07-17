@@ -1,0 +1,35 @@
+.createDiv{
+    text-align: left;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    padding: 0 1em 0 1em;
+}
+.createDiv .createForm{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0 1em 0;
+}
+.createDiv .createForm #title{ 
+    padding: 1em;
+    margin: 0 0 1em 0;
+}
+.createDiv .createForm #body{
+    padding: 1em;
+    margin: 1em 0 1em 0;
+    height: 60vh;
+    box-sizing: border-box;
+    resize: none;
+}
+.createDiv .createForm #submit{
+    font-size: medium;
+    color: white;
+    border: 2px solid black;
+    background-color: black;
+}
+@media (max-width: 800px) {
+    .createDiv{
+        width: 75vw;
+    }
+}

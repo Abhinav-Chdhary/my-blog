@@ -1,0 +1,16 @@
+.BlogsDiv{
+    text-align: left;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    padding: 0 1em 0 1em;
+}
+.BlogsList .BlogName{
+    text-decoration: none;
+}
+@media (max-width: 800px) {
+    .BlogsDiv{
+        width: 75vw;
+    }
+}

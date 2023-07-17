@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Blog from "./Pages/Blog.js";
+import About from "./Pages/About.js";
+import Home from "./Pages/Home.js";
+import Navibar from "./Navibar.js";
+import Create from "./Pages/Create.js";
+import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import BlogPost from "./Pages/BlogPost.js";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [blogs, setBlogs] = useState([]);
+
+    const handleBlog = (inp) => {
+        setBlogs((prevBlogs) => [...prevBlogs, inp]);
+    };
+    return (
+        <div>
+            <Navibar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/blog" element={<Blog blogs={blogs} />} />
+                <Route path="/about" element={<About />} />
+                <Route
+                    path="/Create"
+                    element={<Create handleBlog={handleBlog} />}
+                />
+                <Route
+                    path="/blog/:id"
+                    element={<BlogPost blogs={blogs} />}
+                />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

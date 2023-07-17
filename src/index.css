@@ -1,13 +1,44 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@500&display=swap');
+@import './Pages/HomeStyle.css';
+@import './Pages/AboutStyle.css';
+@import './Pages/BlogStyle.css';
+@import './Pages/CreateStyle.css';
+@import './Pages/BlogPost.css';
+
+*{
+  font-family: 'Victor Mono', monospace;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.Navbar{
+  width:auto;
+  display: flex;
+  margin-left: 5%;
+  align-items: center;
+  justify-content: space-around;
+}
+.Navbar h1{
+  margin-left: 10%;
+  color: black;
+}
+.Navbar a{
+  text-decoration: none;
+}
+.Navbar .title{
+  display: flex;
+}
+.Navbar .otherLinks{
+  width: 30%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;  
+}
+.Navbar .otherLinks li{
+  margin: 0px 10px 0px 10px;
+  text-decoration: none;
+}
+
