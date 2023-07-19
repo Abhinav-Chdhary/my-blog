@@ -27,7 +27,7 @@ const Create = (props) => {
     return (
         <div className="createDiv">
             <h2>Create</h2>
-            <form className="createForm" onSubmit={handleSubmit}>
+            <form className="createForm" action="/Create" method="post" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     value={inputs.title}
