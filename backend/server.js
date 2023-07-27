@@ -19,9 +19,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json());
-
 app.use("/api", require("./Routes/DisplayBlogs"));
+app.use(express.json());
 app.use("/api", require("./Routes/CreateBlog"));
 
 app.get("/", (req, res) => {
