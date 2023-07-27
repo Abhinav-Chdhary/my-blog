@@ -7,6 +7,21 @@ const mongoDB = async () => {
   try {
     await mongoose.connect(mongouri);
     console.log("Connected to MongoDB");
+    const changeStream = mongoose.connection.collection("blogs").watch();
+
+    // Listen for changes in the collection
+    changeStream.on("change", async (change) => {
+      if (change) {
+        // Fetch the latest blogs after a new blog is added
+        const fetched_blogs = await mongoose.connection
+          .collection("blogs")
+          .find({})
+          .toArray();
+
+        // Update the global variable with the latest blogs
+        global.blogs_items = fetched_blogs;
+      }
+    });
     const fetched_blogs = await mongoose.connection.db
       .collection("blogs")
       .find({})
