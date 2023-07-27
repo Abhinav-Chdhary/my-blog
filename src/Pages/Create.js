@@ -30,7 +30,7 @@ const Create = (props) => {
     const json = await response.json();
     console.log(json);
     console.log(json.success);
-    const newBlog = { title: inputs.title, body: inputs.body };
+    const newBlog = 1;
     setInputs({ title: "", body: "" });
 
     //console.log(blogs);

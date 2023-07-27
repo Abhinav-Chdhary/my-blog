@@ -9,6 +9,7 @@ import BlogPost from "./Pages/BlogPost.js";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
+  const [createCall, setcreateCall] = useState(0);
 
   const loadData = async () => {
     let response = await fetch("http://localhost:5000/api/blogsData", {
@@ -23,13 +24,13 @@ function App() {
   };
 
   const handleBlog = (inp) => {
-    setBlogs((prevBlogs) => [...prevBlogs, inp]);
+    setcreateCall(createCall + 1);
   };
 
   useEffect(() => {
     loadData();
-    //console.log("I used useEffect");
-  }, []);
+    console.log(createCall);
+  }, [createCall]);
 
   return (
     <div>
