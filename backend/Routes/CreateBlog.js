@@ -8,6 +8,7 @@ router.post("/createNewBlog", async (req, res) => {
       title: req.body.title,
       body: req.body.body,
     });
+    //console.log(req);
     res.json({ success: true });
   } catch (error) {
     console.error(error);

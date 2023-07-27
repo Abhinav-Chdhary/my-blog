@@ -8,8 +8,8 @@ const mongoDB = async () => {
     await mongoose.connect(mongouri);
     console.log("Connected to MongoDB");
     const fetched_blogs = await mongoose.connection.db
-      .collection("sample_blogs")
-      .find()
+      .collection("blogs")
+      .find({})
       .toArray();
     //using global variables
 

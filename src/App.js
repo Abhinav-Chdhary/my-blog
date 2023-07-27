@@ -12,22 +12,25 @@ function App() {
 
   const loadData = async () => {
     let response = await fetch("http://localhost:5000/api/blogsData", {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     });
     response = await response.json();
+    //console.log(response);
     setBlogs(response);
   };
-
-  useEffect(() => {
-    loadData();
-  }, []);
 
   const handleBlog = (inp) => {
     setBlogs((prevBlogs) => [...prevBlogs, inp]);
   };
+
+  useEffect(() => {
+    loadData();
+    //console.log("I used useEffect");
+  }, []);
+
   return (
     <div>
       <Navibar />
