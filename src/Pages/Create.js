@@ -35,6 +35,7 @@ const Create = (props) => {
 
     //console.log(blogs);
     props.handleBlog(newBlog);
+    window.location.reload(false);
   };
   return (
     <div className="createDiv">
